@@ -1,0 +1,94 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+  
+    </script>
+    <script>
+      $(document).ready(function () {
+          $('#reco').on('input change', function () {
+              if ($(this).val() != '') {
+                  $('#submit').prop('disabled', false);
+              }
+              else {
+                  $('#submit').prop('disabled', true);
+              }
+          });
+      });
+  </script>
+  </head>
+  
+  
+  <div class="row flex-grow">
+      <div class="col-12 grid-margin stretch-card">
+        <div class="card card-rounded">
+          <div class="card-body">
+            <div class="d-sm-flex justify-content-between align-items-start">
+              <div>
+                <h4 class="card-title card-title-dash">Liste Utilisateurs</h4>
+              </div>
+              <div>
+                <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="submit" routerLink="../addus"><i class="mdi mdi-account-plus"></i>Add new member</button>
+              </div>
+            </div>
+            <div class="table-responsive  mt-1">
+              <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search..."
+                 
+                />
+              <table class="table select-table">
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let c of lesUtilisateurs ">
+                   
+                    <td>
+                      <h6>{{c.id}}</h6>
+                    </td>  
+                    <td>
+                      <h6>{{c.firstName}}</h6>
+                    </td> 
+                    <td>
+                      <h6>{{c.lastName}}</h6>
+                    </td>
+                    <td>
+                      <h6>{{c.age}}</h6>
+                    </td>
+                    <td>
+                      <h6>{{ c.email }}</h6>
+  
+                    </td>
+                    
+                    <td>
+                      <div class="badge badge-opacity-warning">
+                        <button type="button" routerLink="../detaillUs/{{c.id}}" class="btn btn-primary btn-rounded btn-icon">
+                          <i class="mdi mdi-account-card-details"></i>
+                        </button>
+                        <button type="button" (click)="delete(c.id)" class="btn btn-danger btn-rounded btn-icon">
+                          <i class="mdi mdi-close "></i>
+                        </button>
+                      </div>
+                  </td>
+                   
+  
+                   
+                  </tr>
+                </tbody>
+                
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  

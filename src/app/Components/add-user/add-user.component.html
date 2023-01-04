@@ -1,0 +1,86 @@
+
+    <div class="content-wrapper ">
+      <div class="row">
+        <div class="col-md-9 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title text-center">Add Utilisateur</h4>
+
+              <form  class="forms-sample" [formGroup]="formGroup" (ngSubmit)="addUser()">
+                <div class="form-group">
+
+                  <label >Nom</label>
+                  <input type="text" class="form-control" id="nom"  placeholder="nom" formControlName="firstName">
+                  <div
+                  style="color: red"
+                  *ngIf="
+                  formGroup.get('firstName')  ?.hasError('required') &&  formGroup.get('firstName')?.touched "        class="alert alert-danger" >
+                  Nom required
+                </div>
+                </div>
+                <div class="form-group">
+                  <label>Prenom</label>
+                  <input type="text" class="form-control" id="prenom"  placeholder="prenom" formControlName="lastName">
+                  <div
+                  style="color: red"
+                  *ngIf="
+                  formGroup.get('lastName')  ?.hasError('required') &&  formGroup.get('lastName')?.touched "        class="alert alert-danger" >
+                  Prenom required
+                </div> 
+                </div>
+                <div class="form-group">
+                  <label >Email</label>
+                  <input type="text"  class="form-control" id="email"  placeholder="email" formControlName="email">
+                  <div
+                  style="color: red"
+                  *ngIf="
+                  formGroup.get('email')  ?.hasError('required') &&  formGroup.get('email')?.touched "        class="alert alert-danger" >
+                  Email required
+                </div>  
+                </div>
+               
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control"  id=" password" placeholder="password" formControlName="password">
+                    <div
+                    style="color: red"
+                    *ngIf="
+                    formGroup.get('password')  ?.hasError('required') &&  formGroup.get('password')?.touched "        class="alert alert-danger" >
+                    Password required
+                  </div>
+                   
+                  </div>
+                  <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" class="form-control" id="age" placeholder="age" formControlName="age">
+                    <div
+                    style="color: red"
+                    *ngIf="
+                    formGroup.get('age')  ?.hasError('required') &&  formGroup.get('age')?.touched "        class="alert alert-danger" >
+                    Age required
+                  </div> 
+                  </div>
+                  <div class="form-group ">
+                    <label>Role</label>
+                    <select class="form-control" formControlName="role">
+                      
+                      <option >Utilisateur</option>
+                    </select>
+                    <div
+                    style="color: red"
+                    *ngIf="
+                    formGroup.get('role')  ?.hasError('required') &&  formGroup.get('role')?.touched "        class="alert alert-danger" >
+                    Role required
+                  </div> 
+                </div>
+                 
+                   <br>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button class="btn btn-light" routerLink="../user">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+

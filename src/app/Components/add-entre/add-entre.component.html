@@ -1,0 +1,52 @@
+
+    <div class="content-wrapper ">
+        <div class="row">
+          <div class="col-md-9 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title text-center">Add Utilisateur</h4>
+  
+                <form  class="forms-sample" #f="ngForm" (ngSubmit)="addEntreprise(f)">
+                  <div class="form-group">
+  
+                    <label >Nom</label>
+                    <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" required ngModel>
+                    
+                  </div>
+                  
+                  <div class="form-group">
+                    <label >Email</label>
+                    <input type="text"  class="form-control" id="email" name="email" placeholder="email" required ngModel>
+                    
+                  </div>
+                 
+                  <div class="form-group">
+                      <label>Password</label>
+                      <input type="password" class="form-control"  id=" password"name="password" placeholder="password" required ngModel>
+                     
+                    </div>
+                    <div class="form-group">
+                      <label>matricule</label>
+                      <input type="number" class="form-control" id="matricule" name="matricule" placeholder="matricule" required ngModel>
+                     
+                    </div>
+                    <div class="form-group ">
+                      <label>Role</label>
+                      <select class="form-control" required ngModel name="role">
+                        
+                        <option checked>Entreprise</option>
+                      </select>
+  
+                  </div>
+                   
+                     <br>
+                  <button type="submit" class="btn btn-primary me-2">Submit</button>
+                  <button class="btn btn-light" routerLink="../Entreprise">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
